@@ -1,0 +1,50 @@
+\documentclass[english,LQ,Werewolf]{WoDTeX}
+%TODO s:
+%Inhaltsverzeichnis
+%Rückseite
+
+
+
+\setcounter{tocdepth}{1}
+\setcounter{chapter}{0}
+\begin{document}
+\FrontCover{{\LaTeX Vorlage}}{\begin{tikzpicture}
+\node [draw,rounded corners, fill=white] {\includegraphics[width=.9\textwidth]{Backgrounds/WoDTeXLogo}};
+\end{tikzpicture}}
+%\tableofcontents
+\twocolumn\sloppy
+\CreditsPage{Lukas Ester}{Lukas Ester}{Lukas Ester}{It was a great time at university which brought the goods and bads of \LaTeX to my knowledge. Now i do not even know whom to thank.}
+\chapter*{How to use this}
+\chapterCiting{\WoDTeX\ can be used to make thing nicer and is a handy \LaTeX Class}{Lukas Ester}\\
+This class is simple to use. I reworked the headlines to correspond to the WoD Format. You should use the *-version for chapter, section, subsection and subsubsection. additionally there is a command \verb|\chapterCiting{Cite}{Person}| to add the citing at each beginning of a chapter. the other commands are listed below. just inspect the .tex document of this file to get more insight on the usage.
+\section*{How to Start}
+the first line should be \verb|\documentclass[english,LQ]| \verb|{WoDTeX}| where the first option is the language(ngerman and german are also supported) and the second option can either be LQ or HQ for Low or High Quality. 
+\subsection*{The Front}
+to start the document it is highly recommended to add a cover page by the command \verb|\FrontCover{Title}{Image}| where the image can even be a tikzpicture or just text.
+\subsection*{The Credits}
+the command \verb|\CreditsPage{Author}{Developer}| \verb|{Editor}{Special Thanks to}| creates the creditspage containing the logos and disclaimer by whitewolf
+\subsection*{Framed Text}
+the command \verb|\WoDFrame{text}| creates the seperator frame around the text:\\
+\WoDFrame{\blindtext}
+\subsection*{General Settings}
+as seen in this .tex file you should set the chapter counter to zero at the start of the document to start with chapter one. you can also set \verb|\twocolumn\sloppy|. due to font issues you need to set your tex compiler to \textbf{XeLaTeX}.
+\section*{Missing Features}
+there are still not all features provided within this class. i will update this product in the next time to complete it. If you encounter errors or have feature requests please contact me (lester@techfak.uni-bielefeld.de).\\
+\textbf{Identified Missing Feature:}
+\begin{itemize}
+\item Table of contents
+\item back cover
+\end{itemize}
+\section*{The Folder Structure}
+In the same Folder as the newly created Document, there should be the WoDTex.cls, the wodGlyphs.sty and the Backgrounds Folder from the zip. Containing the ressource Images. There is also the glyphs folder, containing about 250 Glyphs. Best practice is to create an extra folder for the other images of your project.
+\section*{Glyphs}
+The Glyphs are not that easy to find, due to bad naming. Maybe a renaming is necessary. The current method is:
+\begin{itemize}
+\item Open the folders of the Glyphs to find the name of the file
+\item try \verb|\|foldername (plus) filename-without-ending (example below)
+\item \textbf{fallback:} lookup commandname in the \textit{wodGlyphs.sty} file
+\end{itemize}
+\textbf{For example:}\\
+File is in \textit{AbstActions} and filename is \textit{Birth.png} $\rightarrow$ \verb|\AbstActionsBirth|
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass[ngerman,LQ,Vampire]{WoDTeX}
+%TODO s:
+%Inhaltsverzeichnis
+%Rückseite
+
+
+
+\setcounter{tocdepth}{1}
+\setcounter{chapter}{0}
+\begin{document}
+\FrontCover{{\LaTeX Vorlage}}{\begin{tikzpicture}
+\node [draw,rounded corners, fill=white] {\includegraphics[width=.9\textwidth]{Backgrounds/WoDTeXLogo}};
+\end{tikzpicture}}
+%\tableofcontents
+\twocolumn\sloppy
+\CreditsPage{Lukas Jaspaert}{Lukas Jaspaert}{Lukas Jaspaert}{Es war eine aufregende Zeit an der Uni, welche mir \LaTeX näher gebracht hat. Ich weiß nichtmal, ob es eine besondere Person gab, welcher ich meinen Dank aussprechen kann.}
+\chapter*{Wie benutze ich WoDTeX}
+\chapterCiting{\WoDTeX\ macht eure Dinge hübscher und ist eine nützliche\LaTeX Klasse}{Lukas Jaspaert}\\
+Die WoDTeX Klasse ist einfach zu nutzen. Da die Überschriften wurden überarbeitet um dem gewünschten Layout zu entsprechen. Benutze einfach \verb|\chapter*{Kapitelüberschrift}| oder \verb|\section*{Abschnitt}| und so weiter. Zusätzlich fügt \verb|\chapterCiting{Zitat}{Person}| das Zitat ein, welches in der Regel zu Beginn jedes Kapitels steht. Die weiteren Befehle sind unten gelistet. Für Anwendungsbeispiele schaut euch einfach die .tex Datei an oder schreibt mir eine Mail(lester@techfak.uni-bielefeld.de).
+\section*{Die Ordnerstruktur}
+Wenn ihr eine neue Datei anlegt ist es am einfachsten, die WoDTex.cls in denselben Ordner zu kopieren, ebenso sollte der Ordner die wodGlyphs.sty und den Backgrounds Ordner aus der Zip enthalten. Darin finden sich die benötigten Logos und Hintergründe. Für die Bilder spezifisch zu eurem Projekt solltet ihr der Übersicht halber einen zusätzlichen Ordner verwenden.
+\section*{Der Start}
+Zuallererst muss die gewünschte Klasse, \verb|\documentclass[ngerman,LQ]| \verb|{WoDTeX}| gewählt werden, dabei steht das erste Argument für die Sprache (Englisch wird auch unterstützt). Außerdem muss die Qualität der verwendeten Bilder gewählt werden, also LQ oder HQ. Es empfiehlt sich die HQ Option nur auszuwählen, wenn alles getestet ist und gedruckt werden soll, da diese mehr Zeit und Platz benötigt. Das Layout unterscheidet sich bei den beiden Optionen nicht. 
+\subsection*{Die Titelseite}
+Eine Startseite erzeugt man mit \verb|\FrontCover{Title}{Image}| wobei das zweite Argument sowohl Text als auch ein Bild(z.b. tikzpicture) sein kann.
+\subsection*{Das Impressum}
+Mit \verb|\CreditsPage{Autor}{Entwickler}| \verb|{Editor}{Dank an XY}| wird die zweite Seite erzeugt, welche auch die StorytellersVault Logos und WhiteWolf Rechtebelehrung enthält.
+\newpage
+\subsection*{Gerahmter Text}
+Der Befehl \verb|\WoDFrame{text}| erzeugt den Rahmen um den Text im Werwolf oder Vampire Stil:\\
+\WoDFrame{\blindtext}
+\subsection*{Sonstige Einstellungen}
+Wie auch in der .tex Datei zu sehen, sollte der Zähler für Kapitel auf 0 gesetzt werden. Zudem empfiehlt es sich die Formatierung \verb|\twocolumn\sloppy| zu wählen. Um die unterschiedlichen Schriftarten richtig verwenden zu können muss der TexMaker auf \textbf{XeLaTeX} eingestellt werden.
+\section*{Noch fehlende Features}
+Bisher sind noch nicht alle Features eingebaut, da ich noch nicht genug Zeit hatte, euch aber nicht lange warten lassen möchte. Deshalb ist diese Quasi eine vorab-Version und ich bitte euch, bei Fehlern oder Verbesserungsvorschlägen eine Mail an mich zu schreiben(lester@techfak.uni-bielefeld.de).\\
+\textbf{fehlende Features:}
+\begin{itemize}
+\item Inhaltsverzeichnis
+\item Rückseite(Cover)
+\end{itemize}
+\section*{Die Glyphen}
+Leider sind die Glyphen Bilder schlecht benannt und daher nicht gut zu finden, der aktuelle Prozess sieht vermutlich wie folgt aus:
+\begin{itemize}
+\item Ordner mit den Glyphen öffnen, um Glyphe zu finden
+\item probiere \verb|\|Ordnername (plus) Dateiname-ohne-Endung (siehe Beispiel unten)
+\item \textbf{alternativ} Befehl in  \textit{wodGlyphs.sty} Nachschlagen
+\end{itemize}
+\textbf{Beispiel:}\\
+Datei liegt in \textit{AbstActions} und Dateiname ist \textit{Birth.png} $\rightarrow$ \verb|\AbstActionsBirth|
+\end{document}
